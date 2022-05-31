@@ -25,6 +25,10 @@ body
     bottom: 0px;
 }
 
-
+button
+{
+    width: 100px !important; /* BS override */
+    font-size: 12px;
+}
 
 
