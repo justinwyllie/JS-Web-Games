@@ -288,7 +288,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
     //bind start() to button click.
     document.getElementById("start").addEventListener('click', start);
-    
+
+    //do we have a touch capable device?
+    const isTouchCapable = 'ontouchstart' in window ||
+        (window.DocumentTouch && document instanceof window.DocumentTouch);
+
+        
+    //bind jump() to button click
+    if (isTouchCapable === true)
+    {
+        document.getElementById("jump").addEventListener('touchstart', jump);
+    }
+    else
+    {
+        document.getElementById("jump").addEventListener('click', jump);
+    }
+
     //If the user resizes the browser window start again. 
     window.addEventListener('resize', function(event){
         init();
